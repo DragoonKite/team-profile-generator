@@ -1,6 +1,14 @@
 const { TestScheduler } = require('jest');
 const Employee = require('../lib/Employee');
 
+test('creates an Employee object', () =>{
+    const employee = new Employee('Fred', 0, 'fred@email.com');
+
+    expect(employee.name).toBe('Fred')
+    expect(employee.id).toBe(0);
+    expect(employee.email).toBe('fred@email.com')
+});
+
 test('checks that the Employee has a name', () =>{
     const employee = new Employee('Fred', 0, 'fred@email.com');
 
