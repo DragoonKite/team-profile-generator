@@ -9,6 +9,24 @@ test('creates a Manager object', () =>{
     expect(manager.officenumber).toBe(10);
 })
 
+test('checks that the Manager has a name', () =>{
+    const manager = new Manager('Fred', 1, 'fred@email.com', 10);
+
+    expect(manager.getName()).toEqual(expect.stringContaining(manager.name.toString()));
+});
+
+test('checks that the Manager has an id number', () =>{
+    const manager = new Manager('Fred', 1, 'fred@email.com', 10);
+
+    expect(manager.getID()).toEqual(expect.any(Number));
+});
+
+test('checks that the Managerhas an email address', () =>{
+    const manager = new Manager('Fred', 1, 'fred@email.com', 10);
+
+    expect(manager.getEmail()).toEqual(expect.stringContaining(manager.email.toString()));
+});
+
 test('checks if the Manager role is returned', () =>{
     const manager = new Manager('Fred', 1, 'fred@email.com', 10);
 

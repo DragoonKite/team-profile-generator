@@ -9,6 +9,24 @@ test('creates an Intern object', () =>{
     expect(intern.school).toBe('school');
 })
 
+test('checks that the Intern has a name', () =>{
+    const intern = new Intern('Fred', 1, 'fred@email.com', 'school');
+
+    expect(intern.getName()).toEqual(expect.stringContaining(intern.name.toString()));
+});
+
+test('checks that the Intern has an id number', () =>{
+    const intern = new Intern('Fred', 1, 'fred@email.com', 'school');
+
+    expect(intern.getID()).toEqual(expect.any(Number));
+});
+
+test('checks that the Intern has an email address', () =>{
+    const intern = new Intern('Fred', 1, 'fred@email.com', 'school');
+
+    expect(intern.getEmail()).toEqual(expect.stringContaining(intern.email.toString()));
+});
+
 test('checks if the Intern role is returned', () =>{
     const intern = new Intern('Fred', 1, 'fred@email.com', 'school');
 
